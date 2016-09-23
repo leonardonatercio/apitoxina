@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Gera QRCode e Imprime</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<style type="text/css">
+		.centro {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container table-responsive">
+	  <center>
+	  	<h2>SISTEMA DE DETALHAMENTO DE COLMEIAS</h2>
+	  </center>
+	  <h5>Tabela com todos os detalhes do Apiário #1 e suas colmeias</h5>
+	  <table class="table table-hover">
+	    <thead>
+	      <tr>
+	        <th class="centro">ID</th>
+	        <th class="centro">CAPACIDADE</th>
+	        <th class="centro">DETALHES</th>
+	        <th class="centro">GERAR QRCODE</th>
+	        <th class="qr centro" style="display:none">CÓDIGO</th>
+	        <th class="mostra centro" style="display:none">IMPRIMIR QRCODE</th>
+	      </tr>
+	    </thead>
+	    <tbody class="centro" style="height:120px">
+	      <tr>
+	        <td>1</td>
+	        <td>500</td>
+	        <td><a type="button" class="btn btn-info btn-sm" href="#">Detalhar</a></td>
+	        <td><a type="button" class="btn btn-danger btn-sm" onclick="gerar1()">Gerar QR</a></td>
+	        <td class="qr1" style="display:none">
+	        	<iframe style="border:0;text-align:center" height="120" width="120" id="frame" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/publico.json"></iframe>
+	        </td>
+	        <td><a type="button" style="display:none;" class="btn btn-danger btn-sm mostra1" data-toggle="modal" data-target="#qr1">Imprimir QR</a></td>
+	      </tr>
+	      <tr>
+	        <td>2</td>
+	        <td>350</td>
+	        <td><a type="button" class="btn btn-info btn-sm" href="#">Detalhar</a></td>
+	        <td><a type="button" class="btn btn-danger btn-sm" onclick="gerar2()">Gerar QR</a></td>
+	        <td class="qr2" style="display:none">
+	        	<iframe style="border:0;text-align:center" height="120" width="120" id="frame" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/hoteis.json"></iframe>
+	        </td>
+	        <td><a type="button" style="display:none;" class="btn btn-danger btn-sm mostra2" data-toggle="modal" data-target="#qr2">Imprimir QR</a></td>
+	      </tr>
+	      <tr>
+	        <td>3</td>
+	        <td>450</td>
+	        <td><a type="button" class="btn btn-info btn-sm" href="#">Detalhar</a></td>
+	        <td><a type="button" class="btn btn-danger btn-sm" onclick="gerar3()">Gerar QR</a></td>
+	        <td class="qr3" style="display:none">
+	        	<iframe style="border:0;text-align:center" height="120" width="120" id="frame" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/restaurate.json"></iframe>
+	        </td>
+	        <td><a type="button" style="display:none;" class="btn btn-danger btn-sm mostra3" data-toggle="modal" data-target="#qr3">Imprimir QR</a></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+	<div id="qr1" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">QR #1</h4>
+	      </div>
+	      <div class="modal-body">
+	        <iframe style="border:0;text-align:center" height="300" width="300" id="frame" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/publico.json"></iframe>
+	      </div>
+	      <div class="modal-footer">
+	      	<a type="button" class="btn btn-danger btn-md">Imprimir</a>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<div id="qr2" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">QR #2</h4>
+	      </div>
+	      <div class="modal-body">
+	        <iframe style="border:0;text-align:center" height="300" width="300" id="frame" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/hoteis.json"></iframe>
+	      </div>
+	      <div class="modal-footer">
+	        <a type="button" class="btn btn-danger btn-md">Imprimir</a>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<div id="qr3" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">QR #3</h4>
+	      </div>
+	      <div class="modal-body">
+	        <iframe style="border:0;text-align:center" height="300" width="300" id="frame" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http://www.rebulicodigital.com/app/turcanoa/json/passeios/restaurante.json"></iframe>
+	      </div>
+	      <div class="modal-footer">
+	        <a type="button" class="btn btn-danger btn-md">Imprimir</a>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+		function sumir(){
+			$('.sumir').hide;
+		}
+		function imprimir(){
+	        window.print();
+		}
+		function gerar1(){
+			$('.qr').show();
+			$('.mostra').show();
+			$('.mostra1').show();
+			$('.qr1').show();
+		}
+		function gerar2(){
+			$('.qr').show();
+			$('.mostra').show();
+			$('.mostra2').show();
+			$('.qr2').show();
+		}
+		function gerar3(){
+			$('.qr').show();
+			$('.mostra').show();
+			$('.mostra3').show();
+			$('.qr3').show();
+		}
+	</script>
+</body>
+</html>
